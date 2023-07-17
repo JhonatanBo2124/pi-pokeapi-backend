@@ -5,7 +5,11 @@ const TypeModel = require('./models/type')
 const { DB_USER, DB_PASSWORD, DB_NAME, DB_HOST, DB_URL} = process.env;
 
 // const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:5432/${DB_NAME}`, {logging: false});
-const sequelize = new Sequelize(DB_URL, {logging: false});
+const sequelize = new Sequelize(DB_URL, {logging: false,  dialectOptions:{
+    ssl:{
+      require:true
+    }
+  }});
 
 PokemonModel(sequelize);
 TypeModel(sequelize);
