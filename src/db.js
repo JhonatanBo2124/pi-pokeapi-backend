@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config(); 
 const { Sequelize } = require('sequelize')
 const PokemonModel = require('./models/pokemon')
 const TypeModel = require('./models/type')
